@@ -19,7 +19,9 @@ export enum GlobalSearchType {
   TITLE_CONTENT = 'title-content',
 }
 
-export const PAPERLESS_GREEN_HEX = '#17541f'
+export const NUBETIZA_BLUE_HEX = '#007AFF'
+/** @deprecated Use NUBETIZA_BLUE_HEX instead */
+export const PAPERLESS_GREEN_HEX = NUBETIZA_BLUE_HEX
 
 export const SETTINGS_KEYS = {
   VERSION: 'version',

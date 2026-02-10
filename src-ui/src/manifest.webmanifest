@@ -1,7 +1,8 @@
 {
   "background_color": "white",
-  "description": "A supercharged version of paperless: scan, index and archive all your physical documents",
+  "description": "Nubetiza - Scan, index and archive all your physical documents",
   "display": "standalone",
+  "theme_color": "#007AFF",
   "icons": [
     {
       "src": "favicon.ico",
@@ -12,7 +13,7 @@
       "sizes": "any"
     }
   ],
-  "name": "Paperless-ngx",
-  "short_name": "Paperless-ngx",
+  "name": "Nubetiza",
+  "short_name": "Nubetiza",
   "start_url": "/"
 }

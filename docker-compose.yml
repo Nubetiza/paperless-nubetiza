@@ -1,0 +1,68 @@
+# Nubetiza (Paperless-ngx fork) - Docker Compose for Coolify deployment
+#
+# This compose file builds the app from source and includes:
+# - PostgreSQL database
+# - Redis broker
+# - Nubetiza webserver (built from this repo's Dockerfile)
+#
+# Coolify setup:
+#   1. Point Coolify to this repo
+#   2. Set build pack to "Docker Compose"
+#   3. Configure environment variables (see .env.example)
+#   4. Coolify will build the image from the Dockerfile and start all services
+#
+services:
+  broker:
+    image: docker.io/library/redis:8
+    restart: unless-stopped
+    volumes:
+      - redisdata:/data
+
+  db:
+    image: docker.io/library/postgres:18
+    restart: unless-stopped
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${PAPERLESS_DBNAME:-nubetiza}
+      POSTGRES_USER: ${PAPERLESS_DBUSER:-nubetiza}
+      POSTGRES_PASSWORD: ${PAPERLESS_DBPASS:-nubetiza}
+
+  webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - db
+      - broker
+    ports:
+      - "${PAPERLESS_PORT:-8000}:8000"
+    volumes:
+      - data:/usr/src/paperless/data
+      - media:/usr/src/paperless/media
+      - export:/usr/src/paperless/export
+      - consume:/usr/src/paperless/consume
+    environment:
+      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_DBHOST: db
+      PAPERLESS_DBNAME: ${PAPERLESS_DBNAME:-nubetiza}
+      PAPERLESS_DBUSER: ${PAPERLESS_DBUSER:-nubetiza}
+      PAPERLESS_DBPASS: ${PAPERLESS_DBPASS:-nubetiza}
+      PAPERLESS_SECRET_KEY: ${PAPERLESS_SECRET_KEY:?Set PAPERLESS_SECRET_KEY in environment}
+      PAPERLESS_URL: ${PAPERLESS_URL:-}
+      PAPERLESS_TIME_ZONE: ${PAPERLESS_TIME_ZONE:-UTC}
+      PAPERLESS_OCR_LANGUAGE: ${PAPERLESS_OCR_LANGUAGE:-eng}
+      PAPERLESS_ADMIN_USER: ${PAPERLESS_ADMIN_USER:-}
+      PAPERLESS_ADMIN_PASSWORD: ${PAPERLESS_ADMIN_PASSWORD:-}
+      PAPERLESS_ADMIN_MAIL: ${PAPERLESS_ADMIN_MAIL:-}
+      USERMAP_UID: ${USERMAP_UID:-1000}
+      USERMAP_GID: ${USERMAP_GID:-1000}
+
+volumes:
+  data:
+  media:
+  pgdata:
+  redisdata:
+  export:
+  consume:

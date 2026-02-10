@@ -1,17 +1,17 @@
 @use "sass:color";
-@mixin paperless-green {
-  // base color e.g. #17541f = hsl(128, 57%, 21%)
-  --pngx-primary: 128, 57%;
-  --pngx-primary-lightness: 21%;
+@mixin nubetiza-blue {
+  // base color #007AFF = hsl(211, 100%, 50%)
+  --pngx-primary: 211, 100%;
+  --pngx-primary-lightness: 50%;
 }
 
 :root {
-  @include paperless-green;
+  @include nubetiza-blue;
   --pngx-primary-text-contrast: var(--bs-light);
 
   --bs-primary: hsl(var(--pngx-primary), var(--pngx-primary-lightness));
   --bs-border-color: var(--bs-gray-400);
-  --pngx-primary-faded: hsl(var(--pngx-primary), calc(var(--pngx-primary-lightness) + 76%));
+  --pngx-primary-faded: hsl(var(--pngx-primary), calc(var(--pngx-primary-lightness) + 45%));
   --pngx-primary-lighten-10: hsl(var(--pngx-primary), calc(var(--pngx-primary-lightness) + 10%));
   --pngx-primary-lighten-30: hsl(var(--pngx-primary), calc(var(--pngx-primary-lightness) + 30%));
   --pngx-primary-darken-5: hsl(var(--pngx-primary), calc(var(--pngx-primary-lightness) - 5%));
@@ -67,8 +67,8 @@ $form-check-radio-checked-bg-image-dark: url("data:image/svg+xml,<svg xmlns='htt
 }
 
 // Dark mode
-@mixin paperless-green-dark-mode {
-  --pngx-primary-lightness: 31%;
+@mixin nubetiza-blue-dark-mode {
+  --pngx-primary-lightness: 45%;
   --bs-primary: hsl(var(--pngx-primary),var(--pngx-primary-lightness));
 }
 
@@ -316,11 +316,11 @@ $form-check-radio-checked-bg-image-dark: url("data:image/svg+xml,<svg xmlns='htt
 
 [data-bs-theme="dark"] {
   body:not(.primary-light):not(.primary-dark) {
-    @include paperless-green-dark-mode;
+    @include nubetiza-blue-dark-mode;
 
     .navbar.bg-primary {
-      // navbar is og green in dark mode
-      @include paperless-green;
+      // navbar keeps the base brand color in dark mode
+      @include nubetiza-blue;
     }
   }
 
@@ -333,15 +333,15 @@ $form-check-radio-checked-bg-image-dark: url("data:image/svg+xml,<svg xmlns='htt
     body {
       // no custom theme color
       &:not(.primary-light):not(.primary-dark) {
-        @include paperless-green-dark-mode;
+        @include nubetiza-blue-dark-mode;
 
         .navbar.bg-primary {
-          // navbar is og green in dark mode
-          @include paperless-green;
+          // navbar keeps the base brand color in dark mode
+          @include nubetiza-blue;
         }
 
         .navbar.bg-primary .dropdown-menu {
-          @include paperless-green-dark-mode;
+          @include nubetiza-blue-dark-mode;
         }
       }
 
