@@ -2625,7 +2625,7 @@ class UiSettingsView(GenericAPIView):
 
 @extend_schema_view(
     get=extend_schema(
-        description="Get the current version of the Paperless-NGX server",
+        description="Get the current version of the Nubetiza server",
         responses={
             (200, "application/json"): OpenApiTypes.OBJECT,
         },
@@ -2640,7 +2640,7 @@ class RemoteVersionView(GenericAPIView):
         if remote_version is None:
             try:
                 resp = httpx.get(
-                    "https://api.github.com/repos/paperless-ngx/paperless-ngx/releases/latest",
+                    "https://api.github.com/repos/Nubetiza/paperless-nubetiza/releases/latest",
                     headers={"Accept": "application/json"},
                 )
                 resp.raise_for_status()
@@ -2965,7 +2965,7 @@ class SharedLinkView(View):
 
         response = FileResponse(file_path.open("rb"), content_type="application/zip")
         short_slug = bundle.slug[:12]
-        download_name = f"paperless-share-{short_slug}.zip"
+        download_name = f"nubetiza-share-{short_slug}.zip"
         filename_normalized = (
             normalize("NFKD", download_name)
             .encode(
@@ -3210,7 +3210,7 @@ class CustomFieldViewSet(ModelViewSet):
 
 @extend_schema_view(
     get=extend_schema(
-        description="Get the current system status of the Paperless-NGX server",
+        description="Get the current system status of the Nubetiza server",
         responses={
             (200, "application/json"): inline_serializer(
                 name="SystemStatus",

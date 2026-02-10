@@ -44,7 +44,7 @@ def check_default_language_available(app_configs, **kwargs):
                 errs.append(
                     Error(
                         f"The selected ocr language {lang} is "
-                        f"not installed. Paperless cannot OCR your documents "
+                        f"not installed. Nubetiza cannot OCR your documents "
                         f"without it. Please fix PAPERLESS_OCR_LANGUAGE.",
                     ),
                 )

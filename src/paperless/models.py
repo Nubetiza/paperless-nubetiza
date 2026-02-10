@@ -182,7 +182,7 @@ class ApplicationConfiguration(AbstractSingletonModel):
     )
 
     """
-    Settings for the Paperless application
+    Settings for the Nubetiza application
     """
 
     app_title = models.CharField(
