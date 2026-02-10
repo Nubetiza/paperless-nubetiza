@@ -98,45 +98,7 @@
           </li>
         </ul>
 
-        <div class="nav-group mt-3 mb-1" *pngxIfPermissions="{ action: PermissionAction.View, type: PermissionType.SavedView }">
-          @if (savedViewService.loading) {
-            <h6 class="sidebar-heading px-3 text-muted">
-              <span i18n>Saved views</span>
-              <div class="spinner-border spinner-border-sm fw-normal ms-2" role="status"></div>
-            </h6>
-          } @else if (savedViewService.sidebarViews?.length > 0) {
-            <h6 class="sidebar-heading px-3 text-muted">
-              <span i18n>Saved views</span>
-            </h6>
-            <ul class="nav flex-column mb-2" cdkDropList (cdkDropListDropped)="onDrop($event)">
-              @for (view of savedViewService.sidebarViews; track view.id) {
-                <li class="nav-item w-100 app-link" cdkDrag [cdkDragDisabled]="!settingsService.organizingSidebarSavedViews"
-                  cdkDragPreviewContainer="parent" cdkDragPreviewClass="navItemDrag" (cdkDragStarted)="onDragStart($event)"
-                  (cdkDragEnded)="onDragEnd($event)">
-                  <a class="nav-link" routerLink="view/{{view.id}}"
-                    routerLinkActive="active" (click)="closeMenu()" [ngbPopover]="view.name"
-                    [disablePopover]="!slimSidebarEnabled" placement="end" container="body" triggers="mouseenter:mouseleave"
-                    popoverClass="popover-slim">
-                    <i-bs class="me-1" name="funnel"></i-bs>
-                      <span>&nbsp;<div class="d-inline-flex view-name"><span class="overflow-hidden" [class.text-wrap]="!slimSidebarEnabled">{{view.name}}</span></div>
-                        @if (showSidebarCounts && !slimSidebarEnabled) {
-                          <span class="badge bg-info text-dark ms-2 d-inline">{{ savedViewService.getDocumentCount(view) }}</span>
-                        }
-                      </span>
-                    @if (showSidebarCounts && slimSidebarEnabled) {
-                      <span class="badge bg-info text-dark position-absolute top-0 end-0 d-none d-md-block">{{ savedViewService.getDocumentCount(view) }}</span>
-                    }
-                  </a>
-                  @if (settingsService.organizingSidebarSavedViews) {
-                    <div class="position-absolute end-0 top-0 px-3 py-2" [class.me-n3]="slimSidebarEnabled" cdkDragHandle>
-                      <i-bs name="grip-vertical"></i-bs>
-                    </div>
-                  }
-                </li>
-              }
-            </ul>
-          }
-        </div>
+        <!-- Saved Views sidebar section removed -->
 
         <div class="nav-group mt-3 mb-1" *pngxIfPermissions="{ action: PermissionAction.View, type: PermissionType.Document }">
           @if (openDocuments.length > 0) {
@@ -213,28 +175,14 @@
                 <i-bs class="me-1" name="ui-radios"></i-bs><span>&nbsp;<ng-container i18n>Custom Fields</ng-container></span>
               </a>
             </li>
-            <li class="nav-item app-link" *pngxIfPermissions="{ action: PermissionAction.View, type: PermissionType.SavedView }">
-              <a class="nav-link" routerLink="savedviews" routerLinkActive="active" (click)="closeMenu()"
-                ngbPopover="Saved Views" i18n-ngbPopover [disablePopover]="!slimSidebarEnabled" placement="end"
-                container="body" triggers="mouseenter:mouseleave" popoverClass="popover-slim">
-                <i-bs class="me-1" name="window-stack"></i-bs><span>&nbsp;<ng-container i18n>Saved Views</ng-container></span>
-              </a>
-            </li>
-            <li class="nav-item app-link"
-              *pngxIfPermissions="{ action: PermissionAction.View, type: PermissionType.Workflow }"
-              tourAnchor="tour.workflows">
-              <a class="nav-link" routerLink="workflows" routerLinkActive="active" (click)="closeMenu()"
-                ngbPopover="Workflows" i18n-ngbPopover [disablePopover]="!slimSidebarEnabled" placement="end"
-                container="body" triggers="mouseenter:mouseleave" popoverClass="popover-slim">
-                <i-bs class="me-1" name="boxes"></i-bs><span>&nbsp;<ng-container i18n>Workflows</ng-container></span>
-              </a>
-            </li>
+            <!-- Saved Views manage link removed -->
+            <!-- Workflows link removed -->
             <li class="nav-item app-link" *pngxIfPermissions="{ action: PermissionAction.View, type: PermissionType.MailAccount }"
               tourAnchor="tour.mail">
-              <a class="nav-link" routerLink="mail" routerLinkActive="active" (click)="closeMenu()" ngbPopover="Mail"
+              <a class="nav-link" routerLink="mail" routerLinkActive="active" (click)="closeMenu()" ngbPopover="Printers"
                 i18n-ngbPopover [disablePopover]="!slimSidebarEnabled" placement="end" container="body"
                 triggers="mouseenter:mouseleave" popoverClass="popover-slim">
-                <i-bs class="me-1" name="envelope"></i-bs><span>&nbsp;<ng-container i18n>Mail</ng-container></span>
+                <i-bs class="me-1" name="printer"></i-bs><span>&nbsp;<ng-container i18n>Printers</ng-container></span>
               </a>
             </li>
             <li class="nav-item app-link" *pngxIfPermissions="{ action: PermissionAction.Delete, type: PermissionType.Document }">
@@ -260,13 +208,7 @@
                 <i-bs class="me-1" name="gear"></i-bs><span>&nbsp;<ng-container i18n>Settings</ng-container></span>
               </a>
             </li>
-            <li class="nav-item app-link" *pngxIfPermissions="{ action: PermissionAction.Change, type: PermissionType.AppConfig }">
-              <a class="nav-link" routerLink="config" routerLinkActive="active" (click)="closeMenu()"
-                ngbPopover="Configuration" i18n-ngbPopover [disablePopover]="!slimSidebarEnabled" placement="end"
-                container="body" triggers="mouseenter:mouseleave" popoverClass="popover-slim">
-                <i-bs class="me-1" name="sliders2-vertical"></i-bs><span>&nbsp;<ng-container i18n>Configuration</ng-container></span>
-              </a>
-            </li>
+            <!-- Configuration link removed -->
             <li class="nav-item app-link" *pngxIfPermissions="{ action: PermissionAction.View, type: PermissionType.User }">
               <a class="nav-link" routerLink="usersgroups" routerLinkActive="active" (click)="closeMenu()"
                 ngbPopover="Users & Groups" i18n-ngbPopover [disablePopover]="!slimSidebarEnabled" placement="end"
@@ -274,20 +216,7 @@
                 <i-bs class="me-1" name="people"></i-bs><span>&nbsp;<ng-container i18n>Users & Groups</ng-container></span>
               </a>
             </li>
-            <li class="nav-item app-link"
-              *pngxIfPermissions="{ action: PermissionAction.View, type: PermissionType.PaperlessTask }"
-              tourAnchor="tour.file-tasks">
-              <a class="nav-link" routerLink="tasks" routerLinkActive="active" (click)="closeMenu()"
-                ngbPopover="File Tasks" i18n-ngbPopover [disablePopover]="!slimSidebarEnabled" placement="end"
-                container="body" triggers="mouseenter:mouseleave" popoverClass="popover-slim">
-                <i-bs class="me-1" name="list-task"></i-bs><span>&nbsp;<ng-container i18n>File Tasks</ng-container>@if (tasksService.failedFileTasks.length > 0) {
-                  <span><span class="badge bg-danger ms-2 d-inline">{{tasksService.failedFileTasks.length}}</span></span>
-                }</span>
-                @if (tasksService.failedFileTasks.length > 0 && slimSidebarEnabled) {
-                  <span class="badge bg-danger position-absolute top-0 end-0 d-none d-md-block">{{tasksService.failedFileTasks.length}}</span>
-                }
-              </a>
-            </li>
+            <!-- File Tasks link removed -->
             @if (permissionsService.isAdmin()) {
               <li class="nav-item app-link">
                 <a class="nav-link" routerLink="logs" routerLinkActive="active" (click)="closeMenu()" ngbPopover="Logs"
