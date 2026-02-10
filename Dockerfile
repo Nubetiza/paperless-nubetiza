@@ -141,6 +141,7 @@ ARG RUNTIME_PACKAGES="\
   tesseract-ocr-fra \
   tesseract-ocr-ita \
   tesseract-ocr-spa \
+  tesseract-ocr-ara \
   unpaper \
   pngquant \
   jbig2dec \
