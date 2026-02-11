@@ -23,6 +23,7 @@ case "${PNGX_TAG_VERSION}" in \
     ;; \
 esac
 
+ENV NODE_OPTIONS="--max-old-space-size=1024"
 RUN set -eux \
   && ./node_modules/.bin/ng build --configuration production
 
