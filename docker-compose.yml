@@ -1,15 +1,15 @@
 # Nubetiza (Paperless-ngx fork) - Docker Compose for Coolify deployment
 #
-# This compose file builds the app from source and includes:
+# This compose file uses a pre-built image from GHCR and includes:
 # - PostgreSQL database
 # - Redis broker
-# - Nubetiza webserver (built from this repo's Dockerfile)
+# - Nubetiza webserver (pre-built image from GitHub Container Registry)
 #
 # Coolify setup:
 #   1. Point Coolify to this repo
 #   2. Set build pack to "Docker Compose"
 #   3. Configure environment variables (see .env.example)
-#   4. Coolify will build the image from the Dockerfile and start all services
+#   4. Coolify will pull the pre-built image and start all services
 #
 services:
   broker:
@@ -29,9 +29,7 @@ services:
       POSTGRES_PASSWORD: ${PAPERLESS_DBPASS:-nubetiza}
 
   webserver:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/nubetiza/paperless-nubetiza:dev
     restart: unless-stopped
     depends_on:
       - db
