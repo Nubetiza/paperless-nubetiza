@@ -1,12 +1,12 @@
 @use "sass:color";
-@mixin nubetiza-blue {
+@mixin wathiqa-blue {
   // base color #007AFF = hsl(211, 100%, 50%)
   --pngx-primary: 211, 100%;
   --pngx-primary-lightness: 50%;
 }
 
 :root {
-  @include nubetiza-blue;
+          @include wathiqa-blue;
   --pngx-primary-text-contrast: var(--bs-light);
 
   --bs-primary: hsl(var(--pngx-primary), var(--pngx-primary-lightness));
@@ -67,7 +67,7 @@ $form-check-radio-checked-bg-image-dark: url("data:image/svg+xml,<svg xmlns='htt
 }
 
 // Dark mode
-@mixin nubetiza-blue-dark-mode {
+@mixin wathiqa-blue-dark-mode {
   --pngx-primary-lightness: 45%;
   --bs-primary: hsl(var(--pngx-primary),var(--pngx-primary-lightness));
 }
@@ -316,11 +316,11 @@ $form-check-radio-checked-bg-image-dark: url("data:image/svg+xml,<svg xmlns='htt
 
 [data-bs-theme="dark"] {
   body:not(.primary-light):not(.primary-dark) {
-    @include nubetiza-blue-dark-mode;
+    @include wathiqa-blue-dark-mode;
 
     .navbar.bg-primary {
       // navbar keeps the base brand color in dark mode
-      @include nubetiza-blue;
+              @include wathiqa-blue;
     }
   }
 
@@ -333,15 +333,15 @@ $form-check-radio-checked-bg-image-dark: url("data:image/svg+xml,<svg xmlns='htt
     body {
       // no custom theme color
       &:not(.primary-light):not(.primary-dark) {
-        @include nubetiza-blue-dark-mode;
+        @include wathiqa-blue-dark-mode;
 
         .navbar.bg-primary {
           // navbar keeps the base brand color in dark mode
-          @include nubetiza-blue;
+  @include wathiqa-blue;
         }
 
         .navbar.bg-primary .dropdown-menu {
-          @include nubetiza-blue-dark-mode;
+          @include wathiqa-blue-dark-mode;
         }
       }
 

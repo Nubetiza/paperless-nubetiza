@@ -20,7 +20,7 @@ import { environment } from 'src/environments/environment'
 import { DEFAULT_DISPLAY_FIELDS, DisplayField } from '../data/document'
 import { SavedView } from '../data/saved-view'
 import {
-  NUBETIZA_BLUE_HEX,
+  WATHIQA_BLUE_HEX,
   SETTINGS,
   SETTINGS_KEYS,
   UiSettings,
@@ -478,7 +478,7 @@ export class SettingsService {
 
     this.meta.updateTag({
       name: 'theme-color',
-      content: themeColor?.length ? themeColor : NUBETIZA_BLUE_HEX,
+      content: themeColor?.length ? themeColor : WATHIQA_BLUE_HEX,
     })
   }
 

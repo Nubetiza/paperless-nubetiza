@@ -16,7 +16,7 @@ exists_hint = "Create a directory at {}"
 writeable_message = "{} is not writeable"
 writeable_hint = (
     "Set the permissions of {} to be writeable by the user running the "
-    "Nubetiza services"
+    "Wathiqa services"
 )
 
 
@@ -77,7 +77,7 @@ def binaries_check(app_configs, **kwargs):
     for those here.
     """
 
-    error = "Nubetiza can't find {}. Without it, consumption is impossible."
+    error = "Wathiqa can't find {}. Without it, consumption is impossible."
     hint = "Either it's not in your ${PATH} or it's not installed."
 
     binaries = (settings.CONVERT_BINARY, "tesseract", "gs")
@@ -98,7 +98,7 @@ def debug_mode_check(app_configs, **kwargs):
                 "DEBUG mode is enabled. Disable Debug mode. This is a serious "
                 "security issue, since it puts security overrides in place "
                 "which are meant to be only used during development. This "
-                "also means that Nubetiza will tell anyone various "
+                "also means that Wathiqa will tell anyone various "
                 "debugging information when something goes wrong.",
             ),
         ]

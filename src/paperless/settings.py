@@ -440,14 +440,14 @@ FORCE_SCRIPT_NAME, BASE_URL, LOGIN_URL, LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL 
 
 # DRF Spectacular settings
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Nubetiza REST API",
-    "DESCRIPTION": "OpenAPI Spec for Nubetiza",
+    "TITLE": "Wathiqa REST API",
+    "DESCRIPTION": "OpenAPI Spec for Wathiqa",
     "VERSION": "6.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
     "SWAGGER_UI_DIST": "SIDECAR",
     "COMPONENT_SPLIT_REQUEST": True,
     "EXTERNAL_DOCS": {
-        "description": "Nubetiza API Documentation",
+        "description": "Wathiqa API Documentation",
         "url": "https://docs.paperless-ngx.com/api/",
     },
     "ENUM_NAME_OVERRIDES": {
@@ -514,7 +514,7 @@ EMAIL_HOST_PASSWORD: Final[str] = os.getenv("PAPERLESS_EMAIL_HOST_PASSWORD", "")
 DEFAULT_FROM_EMAIL: Final[str] = os.getenv("PAPERLESS_EMAIL_FROM", EMAIL_HOST_USER)
 EMAIL_USE_TLS: Final[bool] = __get_boolean("PAPERLESS_EMAIL_USE_TLS")
 EMAIL_USE_SSL: Final[bool] = __get_boolean("PAPERLESS_EMAIL_USE_SSL")
-EMAIL_SUBJECT_PREFIX: Final[str] = "[Nubetiza] "
+EMAIL_SUBJECT_PREFIX: Final[str] = "[Wathiqa] "
 EMAIL_TIMEOUT = 30.0
 EMAIL_ENABLED = EMAIL_HOST != "localhost" or EMAIL_HOST_USER != ""
 if DEBUG:  # pragma: no cover
@@ -559,9 +559,9 @@ SOCIAL_ACCOUNT_SYNC_GROUPS_CLAIM: Final[str] = os.getenv(
 
 HEADLESS_TOKEN_STRATEGY = "paperless.adapter.DrfTokenStrategy"
 
-MFA_TOTP_ISSUER = "Nubetiza"
+MFA_TOTP_ISSUER = "Wathiqa"
 
-ACCOUNT_EMAIL_SUBJECT_PREFIX = "[Nubetiza] "
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "[Wathiqa] "
 
 DISABLE_REGULAR_LOGIN = __get_boolean("PAPERLESS_DISABLE_REGULAR_LOGIN")
 REDIRECT_LOGIN_TO_SSO = __get_boolean("PAPERLESS_REDIRECT_LOGIN_TO_SSO")

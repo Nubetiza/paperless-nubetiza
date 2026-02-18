@@ -1,6 +1,6 @@
 {
   "background_color": "white",
-  "description": "Nubetiza - Scan, index and archive all your physical documents",
+  "description": "Wathiqa - Scan, index and archive all your physical documents",
   "display": "standalone",
   "theme_color": "#007AFF",
   "icons": [
@@ -13,7 +13,7 @@
       "sizes": "any"
     }
   ],
-  "name": "Nubetiza",
-  "short_name": "Nubetiza",
+  "name": "Wathiqa",
+  "short_name": "Wathiqa",
   "start_url": "/"
 }

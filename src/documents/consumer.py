@@ -294,7 +294,7 @@ class ConsumerPlugin(
 
             # For the actual work, copy the file into a tempdir
             tempdir = tempfile.TemporaryDirectory(
-                prefix="nubetiza",
+                prefix="wathiqa",
                 dir=settings.SCRATCH_DIR,
             )
             self.working_copy = Path(tempdir.name) / Path(self.filename)

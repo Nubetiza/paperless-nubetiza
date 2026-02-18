@@ -27,4 +27,4 @@ import logging  # noqa: E402
 from paperless.version import __full_version_str__  # noqa: E402
 
 logger = logging.getLogger("paperless.asgi")
-logger.info(f"[init] Nubetiza version: v{__full_version_str__}")
+logger.info(f"[init] Wathiqa version: v{__full_version_str__}")

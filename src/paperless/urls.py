@@ -372,8 +372,8 @@ websocket_urlpatterns = [
 ]
 
 # Text in each page's <h1> (and above login form).
-admin.site.site_header = "Nubetiza"
+admin.site.site_header = "Wathiqa"
 # Text at the end of each page's <title>.
-admin.site.site_title = "Nubetiza"
+admin.site.site_title = "Wathiqa"
 # Text at the top of the admin index page.
-admin.site.index_title = _("Nubetiza administration")
+admin.site.index_title = _("Wathiqa administration")

@@ -182,7 +182,7 @@ class ApplicationConfiguration(AbstractSingletonModel):
     )
 
     """
-    Settings for the Nubetiza application
+    Settings for the Wathiqa application
     """
 
     app_title = models.CharField(

@@ -2625,7 +2625,7 @@ class UiSettingsView(GenericAPIView):
 
 @extend_schema_view(
     get=extend_schema(
-        description="Get the current version of the Nubetiza server",
+        description="Get the current version of the Wathiqa server",
         responses={
             (200, "application/json"): OpenApiTypes.OBJECT,
         },
@@ -2965,7 +2965,7 @@ class SharedLinkView(View):
 
         response = FileResponse(file_path.open("rb"), content_type="application/zip")
         short_slug = bundle.slug[:12]
-        download_name = f"nubetiza-share-{short_slug}.zip"
+        download_name = f"wathiqa-share-{short_slug}.zip"
         filename_normalized = (
             normalize("NFKD", download_name)
             .encode(
@@ -3210,7 +3210,7 @@ class CustomFieldViewSet(ModelViewSet):
 
 @extend_schema_view(
     get=extend_schema(
-        description="Get the current system status of the Nubetiza server",
+        description="Get the current system status of the Wathiqa server",
         responses={
             (200, "application/json"): inline_serializer(
                 name="SystemStatus",

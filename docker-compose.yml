@@ -1,9 +1,9 @@
-# Nubetiza (Paperless-ngx fork) - Docker Compose for Coolify deployment
+# Wathiqa (Paperless-ngx fork) - Docker Compose for Coolify deployment
 #
 # This compose file uses a pre-built image from GHCR and includes:
 # - PostgreSQL database
 # - Redis broker
-# - Nubetiza webserver (pre-built image from GitHub Container Registry)
+# - Wathiqa webserver (pre-built image from GitHub Container Registry)
 #
 # Coolify setup:
 #   1. Point Coolify to this repo
@@ -24,9 +24,9 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql
     environment:
-      POSTGRES_DB: ${PAPERLESS_DBNAME:-nubetiza}
-      POSTGRES_USER: ${PAPERLESS_DBUSER:-nubetiza}
-      POSTGRES_PASSWORD: ${PAPERLESS_DBPASS:-nubetiza}
+      POSTGRES_DB: ${PAPERLESS_DBNAME:-wathiqa}
+      POSTGRES_USER: ${PAPERLESS_DBUSER:-wathiqa}
+      POSTGRES_PASSWORD: ${PAPERLESS_DBPASS:-wathiqa}
 
   webserver:
     image: ghcr.io/nubetiza/paperless-nubetiza:dev
@@ -44,9 +44,9 @@ services:
     environment:
       PAPERLESS_REDIS: redis://broker:6379
       PAPERLESS_DBHOST: db
-      PAPERLESS_DBNAME: ${PAPERLESS_DBNAME:-nubetiza}
-      PAPERLESS_DBUSER: ${PAPERLESS_DBUSER:-nubetiza}
-      PAPERLESS_DBPASS: ${PAPERLESS_DBPASS:-nubetiza}
+      PAPERLESS_DBNAME: ${PAPERLESS_DBNAME:-wathiqa}
+      PAPERLESS_DBUSER: ${PAPERLESS_DBUSER:-wathiqa}
+      PAPERLESS_DBPASS: ${PAPERLESS_DBPASS:-wathiqa}
       PAPERLESS_SECRET_KEY: ${PAPERLESS_SECRET_KEY:?Set PAPERLESS_SECRET_KEY in environment}
       PAPERLESS_URL: ${PAPERLESS_URL:-}
       PAPERLESS_TIME_ZONE: ${PAPERLESS_TIME_ZONE:-UTC}
