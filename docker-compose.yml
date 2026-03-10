@@ -30,6 +30,7 @@ services:
 
   webserver:
     image: ghcr.io/nubetiza/paperless-nubetiza:dev
+    pull_policy: always
     restart: unless-stopped
     depends_on:
       - db
