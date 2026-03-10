@@ -2,7 +2,7 @@
   "background_color": "white",
   "description": "Wathiqa - Scan, index and archive all your physical documents",
   "display": "standalone",
-  "theme_color": "#007AFF",
+  "theme_color": "#1FAB68",
   "icons": [
     {
       "src": "favicon.ico",

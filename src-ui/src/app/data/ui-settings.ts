@@ -19,11 +19,13 @@ export enum GlobalSearchType {
   TITLE_CONTENT = 'title-content',
 }
 
-export const WATHIQA_BLUE_HEX = '#007AFF'
-/** @deprecated Use WATHIQA_BLUE_HEX instead */
-export const NUBETIZA_BLUE_HEX = WATHIQA_BLUE_HEX
-/** @deprecated Use WATHIQA_BLUE_HEX instead */
-export const PAPERLESS_GREEN_HEX = WATHIQA_BLUE_HEX
+export const WATHIQA_GREEN_HEX = '#1FAB68'
+/** @deprecated Use WATHIQA_GREEN_HEX instead */
+export const WATHIQA_BLUE_HEX = WATHIQA_GREEN_HEX
+/** @deprecated Use WATHIQA_GREEN_HEX instead */
+export const NUBETIZA_BLUE_HEX = WATHIQA_GREEN_HEX
+/** @deprecated Use WATHIQA_GREEN_HEX instead */
+export const PAPERLESS_GREEN_HEX = WATHIQA_GREEN_HEX
 
 export const SETTINGS_KEYS = {
   VERSION: 'version',

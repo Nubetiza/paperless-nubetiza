@@ -1,13 +1,15 @@
 @use "sass:color";
-@mixin wathiqa-blue {
-  // base color #007AFF = hsl(211, 100%, 50%)
-  --pngx-primary: 211, 100%;
-  --pngx-primary-lightness: 50%;
+@mixin wathiqa-green {
+  // base color #1FAB68 = hsl(151, 69%, 40%)
+  --pngx-primary: 151, 69%;
+  --pngx-primary-lightness: 40%;
 }
 
 :root {
-          @include wathiqa-blue;
+          @include wathiqa-green;
   --pngx-primary-text-contrast: var(--bs-light);
+  --pngx-dark-teal: #095256;
+  --pngx-deep-navy: #050533;
 
   --bs-primary: hsl(var(--pngx-primary), var(--pngx-primary-lightness));
   --bs-border-color: var(--bs-gray-400);
@@ -67,8 +69,8 @@ $form-check-radio-checked-bg-image-dark: url("data:image/svg+xml,<svg xmlns='htt
 }
 
 // Dark mode
-@mixin wathiqa-blue-dark-mode {
-  --pngx-primary-lightness: 45%;
+@mixin wathiqa-green-dark-mode {
+  --pngx-primary-lightness: 38%;
   --bs-primary: hsl(var(--pngx-primary),var(--pngx-primary-lightness));
 }
 
@@ -316,11 +318,11 @@ $form-check-radio-checked-bg-image-dark: url("data:image/svg+xml,<svg xmlns='htt
 
 [data-bs-theme="dark"] {
   body:not(.primary-light):not(.primary-dark) {
-    @include wathiqa-blue-dark-mode;
+    @include wathiqa-green-dark-mode;
 
     .navbar.bg-primary {
       // navbar keeps the base brand color in dark mode
-              @include wathiqa-blue;
+              @include wathiqa-green;
     }
   }
 
@@ -333,15 +335,15 @@ $form-check-radio-checked-bg-image-dark: url("data:image/svg+xml,<svg xmlns='htt
     body {
       // no custom theme color
       &:not(.primary-light):not(.primary-dark) {
-        @include wathiqa-blue-dark-mode;
+        @include wathiqa-green-dark-mode;
 
         .navbar.bg-primary {
           // navbar keeps the base brand color in dark mode
-  @include wathiqa-blue;
+  @include wathiqa-green;
         }
 
         .navbar.bg-primary .dropdown-menu {
-          @include wathiqa-blue-dark-mode;
+          @include wathiqa-green-dark-mode;
         }
       }
 

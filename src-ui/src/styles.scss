@@ -66,6 +66,7 @@ $grid-breakpoints: (
 // Paperless-ngx styles
 body {
   --pngx-body-font-size: 0.875rem;
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: var(--pngx-body-font-size);
   height: 100vh;
 }
