@@ -12,6 +12,10 @@ body {
   height: auto;
 }
 
+.logo + .logo {
+  display: none;
+}
+
 .byline {
   font-size: 0.6rem;
   letter-spacing: 0.1rem;
@@ -74,23 +78,30 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-  /* From theme_dark.scss */
   body {
-    --bs-body-bg: #161618;
-    --bs-body-color: #abb2bf;
-    --bs-body-color-rgb: 171, 178, 191;
-    --bs-border-color: #47494f;
+    --bs-body-bg: #050533;
+    --bs-body-color: #e0e4eb;
+    --bs-body-color-rgb: 224, 228, 235;
+    --bs-border-color: #2a2a5a;
   }
 
   .form-control, .form-floating {
-    --bs-body-bg: #1c1c1f;
+    --bs-body-bg: #0a0a35;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .logo + .logo {
+    display: inline;
   }
 
   svg.logo .text {
-    fill: #abb2bf !important;
+    fill: #e0e4eb !important;
   }
 
   .byline {
-    color: #abb2bf;
+    color: #e0e4eb;
   }
 }
